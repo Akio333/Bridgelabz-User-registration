@@ -14,6 +14,9 @@ public class UserRegistration {
         userRegistration.nameValidation(scanner.next());
         System.out.println("Enter Email id: ");
         userRegistration.emaileValidation(scanner.next());
+        System.out.println("Enter Phone Number: ");
+        userRegistration.mobileNumberValidation(scanner.nextLine());
+        scanner.next();
 
     }
 
@@ -26,10 +29,19 @@ public class UserRegistration {
     }
 
     public void emaileValidation(String name) {
-        if (Pattern.matches("^[A-Za-z0-9_][A-Za-z0-9_.]*[@]{1}[a-z]+[.][a-z]{2,6}$", name)) {
+        String regex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
+        if (Pattern.matches(regex, name)) {
             System.out.println("Valid Email Id");
         } else {
             System.out.println("Invalid Email Id");
+        }
+    }
+
+    public void mobileNumberValidation(String num) {
+        if (Pattern.matches("^[1-9]{1,3}[ ]{1}[1-9]{1}[0-9]{9}$", num)) {
+            System.out.println("Valid Phone Number.");
+        } else {
+            System.out.println("Invalid Phone Number.");
         }
     }
 }
