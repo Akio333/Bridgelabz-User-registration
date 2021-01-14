@@ -5,7 +5,6 @@ public class UserRegistration {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         UserRegistration userRegistration = new UserRegistration();
-        String firstName;
 
         System.out.println("Welcome to User Registration!");
         System.out.println("Enter First Name: ");
@@ -14,9 +13,12 @@ public class UserRegistration {
         userRegistration.nameValidation(scanner.next());
         System.out.println("Enter Email id: ");
         userRegistration.emaileValidation(scanner.next());
+        scanner.nextLine();
         System.out.println("Enter Phone Number: ");
         userRegistration.mobileNumberValidation(scanner.nextLine());
-        scanner.next();
+        System.out.println("Enter Password: ");
+        userRegistration.passwordValidation(scanner.next());
+        scanner.close();
 
     }
 
@@ -42,6 +44,14 @@ public class UserRegistration {
             System.out.println("Valid Phone Number.");
         } else {
             System.out.println("Invalid Phone Number.");
+        }
+    }
+
+    public void passwordValidation(String passwoString) {
+        if (Pattern.matches("^.{8,20}$", passwoString)) {
+            System.out.println("Valid Password.");
+        } else {
+            System.out.println("Invalid Password.");
         }
     }
 }
