@@ -10,7 +10,7 @@ public class UserRegistration {
         System.out.println("Welcome to User Registration!");
         System.out.println("Enter First Name: ");
         userRegistration.nameValidation(scanner.next());
-        System.out.println("Enter First Name: ");
+        System.out.println("Enter Last Name: ");
         userRegistration.nameValidation(scanner.next());
         System.out.println("Enter Email id: ");
         userRegistration.emaileValidation(scanner.next());
