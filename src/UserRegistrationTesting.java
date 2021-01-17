@@ -36,7 +36,7 @@ public class UserRegistrationTesting {
 
     @Test
     public void validateEmail(){
-        String testString1 = userRegistration.emaileValidation("akiot3@voicemail.com");
+        String testString1 = userRegistration.emaileValidation("abc-100.hello@gmail.com.au");
         String testString2 = userRegistration.emaileValidation("smulye10@gmail.com");
         String testString3 = userRegistration.emaileValidation("somethingFreaky33@yopmail.com");
         String testString4 = userRegistration.emaileValidation("HeaveN63_44.gg@navi.gg");
